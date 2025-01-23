@@ -27,3 +27,7 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### Demo
+
+![alt text](https://github.com/buihaidang90/my-todo-app/blob/main/Capture.PNG)
