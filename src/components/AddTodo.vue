@@ -15,11 +15,12 @@
 import { ref } from "vue";
 
 const content = ref("");
-const emit = defineEmits(["addItem"])
+const emit = defineEmits(["addItem"]);
 const addItem = () => {
   if (content.value.trim() === "") return;
-//   console.log("add new todo...");
+  //   console.log("add new todo...");
   const newItem = {
+    id: 0,
     content: content.value,
     completed: false,
   };

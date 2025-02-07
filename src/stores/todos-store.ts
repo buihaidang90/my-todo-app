@@ -39,13 +39,15 @@ export const useTodosStore = defineStore("todos", {
     actions: {
         addNewTodo(newTodo) {
             var autoID = 1;
-            if (this.todos.length) autoID = this.todos[this.todos.length - 1].autoID + 1;
-            while (this.todos.filter((todo) => todo.autoID === autoID).length) {
+            if (this.todos.length) autoID = this.todos[this.todos.length - 1].id + 1;
+            while (this.todos.filter((todo) => todo.id === autoID).length) {
                 autoID++;
             }
             newTodo.id = autoID
             //   console.log("push element into array...");
+            this.setJustEdit(newTodo, true);
             this.todos.push(newTodo);
+            this.setJustEdit(newTodo, false);
         },
         editTodo(newTodo) {
             this.todos.forEach((todo) => {
