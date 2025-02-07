@@ -46,7 +46,7 @@ const toggleStatus = (e) => {
   //     "You just have been change completed status: " + e.target.checked
   //   );
   //   console.log(e);
-  emit("changeStatus", props.todoItem.id);
+  emit("changeStatus", props.todoItem);
 };
 const editItem = () => {
   //   console.log("Edit item button clicked.");
@@ -62,7 +62,7 @@ const editItem = () => {
 };
 const deleteItem = () => {
   //   console.log("Delete item button clicked.");
-  emit("deleteItem", props.todoItem.id);
+  emit("deleteItem", props.todoItem);
 };
 
 const hasAttrJustEdit = computed(() => {
