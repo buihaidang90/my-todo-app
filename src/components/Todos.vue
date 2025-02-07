@@ -42,9 +42,9 @@ const todos = ref([
   },
 ]);
 
-const changeState = (id) => {
+const changeState = (todoItem) => {
   todos.value.forEach((todo) => {
-    if (todo.id === id) {
+    if (todo.id === todoItem.id) {
       todo.completed = !todo.completed;
       setDisableEdit(todo, todo.completed);
     }
@@ -59,10 +59,10 @@ const editTodo = (newItem) => {
     }
   });
 };
-const deleteTodo = (id) => {
+const deleteTodo = (todoItem) => {
   var ind = -1;
   for (let i = 0; i < todos.value.length; i++) {
-    if (todos.value[i].id !== id) continue;
+    if (todos.value[i].id !== todoItem.id) continue;
     ind = i;
     break;
   }
